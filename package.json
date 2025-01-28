@@ -74,7 +74,7 @@
 	},
 	"peerDependencies": {
 		"decimal.js": "^10",
-		"prisma": "^5",
+		"prisma": "^6",
 		"zod": "^3"
 	},
 	"peerDependenciesMeta": {
