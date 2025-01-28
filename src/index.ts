@@ -18,10 +18,10 @@ generatorHandler({
 	onGenerate(options) {
 		const project = new Project()
 
-		const models = options.dmmf.datamodel.models
+		const models = options.dmmf.datamodel.models as any
 
 		const { schemaPath } = options
-		const outputPath = options.generator.output!.value
+		const outputPath = options.generator.output!.value as string
 		const clientPath = options.otherGenerators.find(
 			(each) => each.provider.value === 'prisma-client-js'
 		)!.output!.value!
@@ -53,7 +53,7 @@ generatorHandler({
 			semicolons: SemicolonPreference.Remove,
 		})
 
-		models.forEach((model) => {
+		models.forEach((model:any) => {
 			const sourceFile = project.createSourceFile(
 				`${outputPath}/${model.name.toLowerCase()}.ts`,
 				{},
